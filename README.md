@@ -6,6 +6,7 @@ Scripts send independent questions that share one `state` in a single API reques
 
 - **Noul** — yes/no questions that return a probability.
 - **Choice** — pick one option from a defined set; the answer includes the winner, a full probability distribution, and confidence.
+- **Score** — position on ordered levels you describe; the answer can land between levels.
 
 ## Setup
 
@@ -14,6 +15,7 @@ Copy `.env.example` to `.env` and set `JEV_API_KEY`. `.env` is gitignored.
 ```bash
 python3 noul_checks.py
 python3 choice_checks.py
+python3 score_checks.py
 ```
 
 Calls `POST https://api.typesafe.ai/v1/systemone` with the stdlib HTTP client. Each case prints model, round-trip latency, answers, and token usage.
